@@ -70,8 +70,12 @@ client.on('message', function(msg) {
 
 
 client.on('message' , message => {
-    if(message.content.includes === 'hello') {
-    message.channel.send('SupBrotha');
+    if(message.content.startWith(prefix + 'BotInfo')) {
+	    let embed = new Discord.RichEmbed()
+	    .setColor('RANDOM')
+	    .setThumbnail(client.user.avatarURL)
+	    .addfield("BotName", client.user.username)
+	    .addFooter("Requested By (message.author.username)");
     }
      });
 
