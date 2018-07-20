@@ -76,6 +76,8 @@ client.on('message' , message => {
 	    .setThumbnail(client.user.avatarURL)
 	    .addfield("BotName", client.user.username)
 	    .addFooter("Requested By (message.author.username)");
+	    
+	    msg.channel.send({embed});
     }
      });
 
