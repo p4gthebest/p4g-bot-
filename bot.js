@@ -70,8 +70,8 @@ client.on('message', function(msg) {
 
 
 client.on('message' , message => {
-    if(message.content.includes === 'Hi') {
-    message.channel.send(`${user}`);
+    if(message.content.includes === 'hello') {
+    message.channel.send('SupBrotha');
     }
      });
 
