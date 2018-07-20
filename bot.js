@@ -69,4 +69,12 @@ client.on('message', function(msg) {
   });
 
 
+client.on('message' , message => {
+    if(message.content.includes === 'Hi') {
+    message.channel.send(`${user}`);
+    }
+     });
+
+
+
 client.login(process.env.BOT_TOKEN);
