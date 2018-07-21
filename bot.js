@@ -69,14 +69,20 @@ client.on('message', function(msg) {
   });
 
 
-client.on('message' , message => {
-    if(message.content.startWith(prefix + 'BotInfo')) {
-	    let embed = new Discord.RichEmbed()
-	    .setColor('RANDOM')
-	    .setThumbnail(client.user.avatarURL)
-	    .addfield("BotName", client.user.username)
-	    .addFooter("Requested By (message.author.username)");
-	    
+client.on('message', function(msg) {
+    if(msg.content.startsWith (prefix  + 'botinfo')) {
+      let embed = new Discord.RichEmbed()
+      .setColor('RANDOM')
+      .setThumbnail(client.user.avatarURL)
+      .setTitle(`BotInfo`)
+      .addField('BotName', `[${client.user.username}]`)
+      .addField('BotOwner', `[P4G #4256]`)
+      .addField('BotPing', `[${Date.now() - msg.createdTimestamp}]`)
+	  .addField('BotID', `[${client.user.id}]`)
+	  .addField('VoiceChannels', `[${msg.client.channels.filter(m => m.type === 'voice').size}]`)
+	  .addField('ChatChannels', `[${msg.client.channels.filter(m => m.type === 'text').size}]`)
+	  .addField('Prefix', `[-]`)
+
 	    msg.channel.send({embed});
     }
      });
