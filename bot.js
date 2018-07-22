@@ -261,7 +261,7 @@ client.on('message', message => {
                 if(message.content === prefix + "invite") {
                     let embed = new Discord.RichEmbed ()
                     .setTitle("**:arrow_right: Invite ༺`P-Bot`༻**")
-                    .setFooter(`- Requested By: ${msg.author.username}`)
+                    .setFooter(`- Requested By: ${message.author.username}`)
                     .setURL("https://discordapp.com/api/oauth2/authorize?client_id=469947837275308042&permissions=8&scope=bot");
 
                    message.channel.sendEmbed(embed);
