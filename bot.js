@@ -173,7 +173,7 @@ client.on('message', function(msg) {
     .addField('**السبب**', `**[${Kreason}]**`)
     .setTimestamp()
 
-    let Kchannel = msg.guild.channels.find('name', "kickes");
+    let Kchannel = msg.guild.channels.find('name', "kickesbans");
     if(!Kchannel) return msg.channel.send("**لم يتم العثور على روم الطرد**");
 
     msg.guild.member(Kuser).kick(Kreason);
