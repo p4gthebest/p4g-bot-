@@ -183,7 +183,7 @@ client.on('message', function(msg) {
 });
 
 
-
+//ban
 client.on('message', function(msg) {
   if(msg.content.startsWith(prefix + 'ban')) {
     let messagearray = msg.content.split(" ");
@@ -410,28 +410,30 @@ msg.channel.send('**Done**');
 
 
 //clear
-client.on("message", message => {
- 
-            var args = message.content.substring(prefix.length).split(" ");
-            if (message.content.startsWith(prefix + "clear")) {
-   if(!message.member.hasPermission('MANAGE_MESSAGES')) return message.reply('⚠ | **ليس لديك صلاحيات**');
-        var msg;
-        msg = parseInt();
+client.on("message", function(msg) {
+  let args = msg.content.substring(prefix.length).split(" ");
+  if(msg.content.startsWith(prefix + "clear")) {
+  if(!msg.member.hasPermission('MANAGE_MESSAGES')) return msg.replay ('لا تملك صلاحية حدف الرسائل');
+  var tfa7;
+        tfa7 = parseInt();
       
-      message.channel.fetchMessages({limit: msg}).then(messages => message.channel.bulkDelete(messages)).catch(console.error);
-      message.channel.sendMessage("", {embed: {
+      msg.channel.fetchMessages({limit: tfa7}).then(messages => msg.channel.bulkDelete(messages)).catch(console.error);
 
-        title: "Done | تــم",
-        color: 0x06DF00,
-        description: "تم مسح الرسائل بنجاح",
-        footer: {
-          text: "༺P-Bot༻"
-        }
-      }}).then(msg => {msg.delete(3000)});
-                          }
+  let Cembed = new Discord.RichEmbed()
+  .setAuthor(client.user.username, client.user.avatarURL)
+  .setThumbnail(client.user.avatarURL)
+  .setColor("RANDOM")
+  .setDescription(`
+  ● ▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬ ●
+  ❤️**لقد تم مسح الرسائل بنجاح**
+  ● ▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬ ●
+  `)
+  .setFooter(`- Requested By: ${msg.author.username}`)
 
-     
-});
+  msg.channel.sendEmbed(Cembed);
+  msg.channel.send("").then(tfa7 => {tfa7.delete(3000)});
+
+}});
 
 
 client.login(process.env.BOT_TOKEN);
