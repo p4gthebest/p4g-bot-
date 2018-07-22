@@ -261,8 +261,8 @@ client.on('message', message => {
                 if(message.content === prefix + "invite") {
                     let embed = new Discord.RichEmbed ()
                     .setTitle("**:arrow_right: Invite ༺`PrinceBot`༻**")
-                    .setFooter('PrinceBot',`${client.user.avatarURL}`)
-                    .setURL("https://discordapp.com/api/oauth2/authorize?client_id=469927176305901578&permissions=8&scope=bot");
+                    .setFooter('P-Bot',`${client.user.avatarURL}`)
+                    .setURL("https://discordapp.com/api/oauth2/authorize?client_id=469947837275308042&permissions=8&scope=bot");
 
                    message.channel.sendEmbed(embed);
                   }
