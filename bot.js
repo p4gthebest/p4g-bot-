@@ -4,7 +4,6 @@ const prefix = '>'
 
 client.on('ready', () => {
   console.log(`Logged in as ${client.user.tag}!`);
-client.user.setGame(`P-Bot | >invite | >help | ${client.guilds.size} server`,"http://twitch.tv/S-F")
   console.log('')
   console.log('')
   console.log('╔[═════════════════════════════════════════════════════════════════]╗')
@@ -425,13 +424,33 @@ client.on("message", message => {
         color: 0x06DF00,
         description: "تم مسح الرسائل بنجاح",
         footer: {
-          text: "༺PrinceBot༻"
+          text: "༺P-Bot༻"
         }
       }}).then(msg => {msg.delete(3000)});
                           }
 
      
 });
-66
+
+//streaming
+
+client.on('ready', function(){
+    var ms = 10000 ;
+    var setGame = ['In ${client.guilds.size} Server','*help | *invite','In 58 Server','*help | *invite','In 58 Server'];
+    var i = -1;
+    var j = 0;
+    setInterval(function (){
+        if( i == -1 ){
+            j = 1;
+        }
+        if( i == (setGame.length)-1 ){
+            j = -1;
+        }
+        i = i+j;
+        client.user.setGame(setGame[i],`https://www.twitch.tv/DevilKingBot`);
+    }, ms);
+
+});
+
 
 client.login(process.env.BOT_TOKEN);
