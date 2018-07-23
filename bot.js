@@ -29,6 +29,54 @@ client.user.setGame(`>help | >invite ${client.guilds.size} `,"http://twitch.tv/S
 });
 
 
+
+
+//tempmute
+client.on('message',function(msg) {
+  if(msg.content.startsWith(prefix + 'tmute')) {
+    let messagearray = msg.content.split(" ");
+    let cmd = messagearray[0];
+    let args = messagearray.slice(1);
+    let Muser = msg.guild.member(msg.mentions.users.first() || msg.guild.members.get(args[0]));
+    if(!Muser) return msg.channel.send("**لم يتم العثور عن العضو الذي تريد اسكاته")
+    if(!msg.member.hasPermission("ADMINISTRATOR")) return msg.channel.reply("**ليست لديك صلاحية الاسكات**");
+    if(Muser.hasPermission("ADMINISTRATOR")) return msg.channel.send("**لايمكن اسكات هذا العضو**")
+    
+    let Membed = new Discord.RichEmbed() 
+    .setColor("RANDOM")
+    .setTitle(":eight_pointed_black_star: :heavy_minus_sign: ༺**تم اسكات العضو**༻ :heavy_minus_sign: :eight_pointed_black_star:")
+    .addField('**الشخص الذي تم اسكاته**', `**[${Muser}]**`)
+    .addField('**العضو الذي قام باسكاته**', `**[${msg.author}]**`)
+    .setTimestamp()
+
+    let Mchannel = msg.guild.channels.find('name', "mutes")
+    if(!Mchannel) return msg.channel.send("**لم يتم العثور على روم الاسكات**")
+
+    let muterole = msg.guild.roles.find('name', "mute")
+    if(!muterole) return msg.channel.send("**لم يتم العثور على رتبة الميوت**")
+    msg.guild.channels.forEach(async (channel, id) => {
+      await channel.overwritePermissions(muterole ,{
+        SEND_MESSAGES: false,
+        ADD_REACTIONS: false
+      });
+    });
+  
+    let mutetime = args[1];
+    if(!mutetime) return msg.channel.send("**يرجى كتابة وقت**");
+
+    Muser.addRole(muterole.id);
+    msg.channel.send(`<@${Muser.id}> تم اسكات لمدة ${ms(ms(mutetime))}`);
+    Mchannel.send(Membed);
+
+    setTimeout(function() {
+      Muser.removeRole(muterole.id)
+      msg.channel.send(`<@${Muser.id}>تم فك السكوت عن `);
+  }, ms(mutetime));
+   
+}});
+
+
+
 //botserver
 client.on('message', function(msg) {
 	if(msg.content.startsWith (prefix + 'server')) {
