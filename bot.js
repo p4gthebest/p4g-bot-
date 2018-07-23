@@ -478,8 +478,7 @@ client.on("message", function(msg) {
   `)
   .setFooter(`- Requested By: ${msg.author.username}`)
 
-  msg.channel.sendEmbed(Cembed);
-  msg.channel.send("").then(tfa7 => {tfa7.delete(3000)});
+  msg.channel.sendEmbed(Cembed).then(tfa7 => {tfa7.delete(3000)});
 
 }});
 
