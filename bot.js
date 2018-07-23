@@ -126,7 +126,7 @@ client.on('message', function(msg) {
 	  	:heavy_minus_sign::heavy_minus_sign::heavy_minus_sign::heavy_minus_sign::heavy_minus_sign::heavy_minus_sign::heavy_minus_sign::heavy_minus_sign:`,true)  
 	  .addField('**ChatChannels**', `[${msg.client.channels.filter(m => m.type === 'text').size}]
 	  	:heavy_minus_sign::heavy_minus_sign::heavy_minus_sign::heavy_minus_sign::heavy_minus_sign::heavy_minus_sign::heavy_minus_sign::heavy_minus_sign:`,true) 
-	  .addField('**Prefix**', `[~]
+	  .addField('**Prefix**', `[>]
 	  	:heavy_minus_sign::heavy_minus_sign::heavy_minus_sign::heavy_minus_sign::heavy_minus_sign::heavy_minus_sign::heavy_minus_sign::heavy_minus_sign:`,true) 
 
 
