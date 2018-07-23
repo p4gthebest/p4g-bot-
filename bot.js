@@ -415,12 +415,13 @@ client.on('message', function(msg) {
        .setTimestamp()
        .setColor('RANDOM')
        .setDescription(`
-**Server** : [${message.guild.name}]
+● ▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬ ●
+  ❤️**Server** : [${message.guild.name}]
 :heavy_minus_sign::heavy_minus_sign::heavy_minus_sign::heavy_minus_sign::heavy_minus_sign::heavy_minus_sign::heavy_minus_sign::heavy_minus_sign:
-**Sender** : [${message.author.username}]
+  ❤️**Sender** : [${message.author.username}]
 :heavy_minus_sign::heavy_minus_sign::heavy_minus_sign::heavy_minus_sign::heavy_minus_sign::heavy_minus_sign::heavy_minus_sign::heavy_minus_sign:
-**Message** : **[${args}]**
- :heavy_minus_sign::heavy_minus_sign::heavy_minus_sign::heavy_minus_sign::heavy_minus_sign::heavy_minus_sign::heavy_minus_sign::heavy_minus_sign:
+  ❤️**Message** : **[${args}]**
+● ▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬ ●
  
  
  
