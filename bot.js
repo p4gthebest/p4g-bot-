@@ -58,7 +58,7 @@ client.on('guildMemberAdd', member => {
 
 });
 
-
+//addrole when member join
 client.on('guildMemberAdd', member => {
   var role = member.guild.roles.find('name', "- Member");
   member.addRole(role)
