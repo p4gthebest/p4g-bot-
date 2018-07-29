@@ -30,17 +30,39 @@ client.user.setGame(`>help | >invite ${client.guilds.size} `,"http://twitch.tv/S
 });
 
 
-client.on('message', function(msg) {
-  if(msg.content.startsWith(prefix + 'ERole')) {
+//welcome
+client.on('guildMemberAdd', member => {
+  let Wchannel = member.guild.channels.find('name', 'welcome');
+  if(!Wchannel) return;
+  let Wembed = new Discord.RichEmbed()
+  .setColor("RANDOM")
+  .setThumbnail(member.user.avatarURL)
+  .setTitle(`${member.user.username}`)
+  .setDescription(`
+  ● ▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬ ●
+  ❤️**اهلا بك في سيرفرنا يا حلو** :
+  [${member}]
 
-    let role = msg.guild.roles.find('name', '- Member');
+  :heavy_minus_sign::heavy_minus_sign::heavy_minus_sign::heavy_minus_sign::heavy_minus_sign::heavy_minus_sign::heavy_minus_sign::heavy_minus_sign:
 
-if (!role) return msg.channel.send(`**${msg.author.username}**, role not found`);
+  ❤️**تاريخ دخولك للديسكورد** :
+  [${member.user.createdAt}]
+  ● ▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬ ●
 
-msg.guild.members.filter(m => !m.user.bot).map(async member => await member.addRole(role));
-msg.channel.send(`**${msg.author.username}**, role **${role.name}** was added to all members`);
 
-  }});
+
+
+  `) 
+  .setTimestamp()
+  Wchannel.send(Wembed);
+
+});
+
+
+client.on('guildMemberAdd', member => {
+  var role = member.guild.roles.find('name', "- Member");
+  member.addRole(role)
+});
 
 
 
