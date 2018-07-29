@@ -32,7 +32,7 @@ client.user.setGame(`>help | >invite ${client.guilds.size} `,"http://twitch.tv/S
 
 //welcome
 client.on('guildMemberAdd', member => {
-  let Wchannel = member.guild.channels.find('name', 'welcome');
+  let Wchannel = member.guild.channels.find('name', '﹄welcome﹃');
   if(!Wchannel) return;
   let Wembed = new Discord.RichEmbed()
   .setColor("RANDOM")
