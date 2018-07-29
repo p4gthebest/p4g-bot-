@@ -30,6 +30,18 @@ client.user.setGame(`>help | >invite ${client.guilds.size} `,"http://twitch.tv/S
 });
 
 
+client.on('message', function(msg) {
+  if(msg.content.startsWith(prefix + 'ERole')) {
+
+    let role = msg.guild.roles.find('name', '- Member');
+
+if (!role) return msg.channel.send(`**${msg.author.username}**, role not found`);
+
+msg.guild.members.filter(m => !m.user.bot).map(async member => await member.addRole(role));
+msg.channel.send(`**${msg.author.username}**, role **${role.name}** was added to all members`);
+
+  }});
+
 
 
 //tempmute
