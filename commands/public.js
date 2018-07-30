@@ -21,7 +21,7 @@ exports.run = (client, message, args, ops, prefix) => {
 
   ❤️ **>user** : To see your informations
 
-  ❤️ **>binfo** : To See Bot informations
+  ❤️ **>binfo** : To See P-Bot informations
   ● ▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬ ●
   `)
   .setFooter(`- Requested By: ${message.author.username}`)
