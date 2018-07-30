@@ -7,21 +7,21 @@ exports.run = (client, message, args, ops, prefix) => {
   .setColor("RANDOM")
   .setDescription(`
   ● ▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬ ●
-  ❤️ **~calc** : For calculatrice **(~calc 1 + 1)**
+  ❤️ **>calc** : For calculatrice **(~calc 1 + 1)**
 
-  ❤️ **~Gwrithing** : for a ascii art writing **(~Gwriting hi)**
+  ❤️ **>Gwrithing** : for a ascii art writing **(~Gwriting hi)**
 
-  ❤️ **~help** : For help commands
+  ❤️ **>help** : For help commands
 
-  ❤️ **~ping** : To see bot ping
+  ❤️ **>ping** : To see bot ping
 
-  ❤️ **~server** : To see Server informations
+  ❤️ **>server** : To see Server informations
 
-  ❤️ **~report** : To report rule breakers **(~report NAME Reason)**
+  ❤️ **>report** : To report rule breakers **(~report NAME Reason)**
 
-  ❤️ **~user** : To see your informations
+  ❤️ **>user** : To see your informations
 
-  ❤️ **~binfo** : To See Bot informations
+  ❤️ **>binfo** : To See Bot informations
   ● ▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬ ●
   `)
   .setFooter(`- Requested By: ${message.author.username}`)
