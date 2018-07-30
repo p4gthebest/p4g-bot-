@@ -1,1 +1,1 @@
-worker: npm install mathjs
+worker: node bot.js
