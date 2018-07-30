@@ -1,7 +1,13 @@
 const Discord = require('discord.js');
 const client = new Discord.Client();
-const prefix = '~';
+const prefix = '>';
 const ownerID = '391665977949028363'
+ 
+client.on('ready', () => {
+  console.log(`Logged in as ${client.user.tag}!`);
+    client.user.setActivity(`>help | >invite ${client.guilds.size} `,"http://twitch.tv/S-F")
+});
+
 
 client.on('message', message => {
     if (message.author.bot) return;
@@ -50,6 +56,5 @@ client.on('guildMemberRemove', member => {
 
 client.on('ready', () => {
     console.log('Started!');
-    client.user.setActivity(`>help | >invite ${client.guilds.size} `,"http://twitch.tv/S-F")
 })
 client.login(process.env.BOT_TOKEN);
