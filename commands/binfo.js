@@ -24,7 +24,7 @@ exports.run = (client, message, args, ops, prefix) => {
     :heavy_minus_sign::heavy_minus_sign::heavy_minus_sign::heavy_minus_sign::heavy_minus_sign::heavy_minus_sign::heavy_minus_sign::heavy_minus_sign:
     ❤️ChatChannels : **${message.client.channels.filter(m => m.type === 'text').size}**
     :heavy_minus_sign::heavy_minus_sign::heavy_minus_sign::heavy_minus_sign::heavy_minus_sign::heavy_minus_sign::heavy_minus_sign::heavy_minus_sign:
-    ❤️Prefix : **~**
+    ❤️Prefix : **>**
     ● ▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬ ●
     `)
 
