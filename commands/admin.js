@@ -7,15 +7,15 @@ exports.run = (client, message, args, ops, prefix) => {
   .setColor("RANDOM")
   .setDescription(`
   ● ▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬ ●
-  ❤️ **~bc** : For Broadcast 
+  ❤️ **>bc** : For Broadcast 
 
-  ❤️ **~clear** : To clear a room from messages
+  ❤️ **>clear** : To clear a room from messages
 
-  ❤️ **~vote** : To make a vote
+  ❤️ **>vote** : To make a vote
 
-  ❤️ **~kick** : To kick a member
+  ❤️ **>kick** : To kick a member
 
-  ❤️ **~ban** : To Ban member
+  ❤️ **>ban** : To Ban member
   ● ▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬ ●
   `)
   .setFooter(`- Requested By: ${message.author.username}`)
