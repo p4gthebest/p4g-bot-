@@ -42,7 +42,7 @@ client.on('guildMemberAdd', member => {
 });
 
 client.on('guildMemberRemove', member => {
-    let channel = member.guild.channels.find('name', 'welcome')
+    let channel = member.guild.channels.find('name', '﹄welcome﹃')
     if(!channel) return;
     channel.send(member.user + " has left the server!")
 })
@@ -52,4 +52,4 @@ client.on('ready', () => {
     console.log('Started!');
     client.user.setActivity(`>help | >invite ${client.guilds.size} `,"http://twitch.tv/S-F")
 })
-client.login('NDY5OTI3MTc2MzA1OTAxNTc4.DkBcOA.qwd2ihOPGUhWLK-tUxTKt4-0rhw')
+client.login(process.env.BOT_TOKEN);
