@@ -7,11 +7,11 @@ exports.run = (client, message, args, ops, prefix) => {
   .setColor("RANDOM")
   .setDescription(`
   ● ▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬ ●
-  ❤️ **~admin** : for stuff commands
+  ❤️ **>admin** : for stuff commands
 
-  ❤️ **~public** : for public commands
+  ❤️ **>public** : for public commands
   
-  ❤️ **~invite** : to invite command
+  ❤️ **>invite** : to invite the bot
   ● ▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬ ●
   `)
   .setFooter(`- Requested By: ${message.author.username}`)
