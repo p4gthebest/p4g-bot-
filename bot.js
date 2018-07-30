@@ -31,11 +31,11 @@ client.on('message', message => {
 });
 
 client.on('guildMemberAdd', member => {
-    let channel = member.guild.channels.find('name', 'welcome')
+    let channel = member.guild.channels.find('name', '﹄welcome﹃')
     if(!channel) return;
     channel.send(member.user + " has joined the server!");
 
-    let role = member.guild.roles.find('name', 'member')
+    let role = member.guild.roles.find('name', '- Member')
     member.addRole(role);
 
     member.send("I Hope u enjoy our server <3")
